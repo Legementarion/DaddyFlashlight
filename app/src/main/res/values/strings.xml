@@ -1,9 +1,6 @@
 <resources>
-    <string name="app_name">DaddyFlashlight</string>
+    <string name="app_name">Фонарик</string>
     <string name="appwidget_text">Фонарик</string>
-    <string name="configure">Configure</string>
-    <string name="add_widget">Add widget</string>
-    <string name="permdesc_flashlight">ololo widget</string>
-    <string name="no_camera">ololo</string>
-    <string name="no_flash">ololo</string>
+    <string name="off">Выключить</string>
+    <string name="on">Включить</string>
 </resources>

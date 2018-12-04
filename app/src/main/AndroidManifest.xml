@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="com.yalantis.daddyflashlight">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.yalantis.daddyflashlight">
 
     <uses-permission android:name="android.permission.CAMERA"/>
 
+    <permission android:name="android.permission.FLASHLIGHT"
+                android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+                android:protectionLevel="normal"/>
 
     <application
             android:allowBackup="false"
@@ -13,30 +17,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <receiver android:name=".NewAppWidget">
+        <activity android:name=".MainActivity"
+                  android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER"/>
 
-            <meta-data
-                    android:name="android.appwidget.provider"
-                    android:resource="@xml/new_app_widget_info"/>
-        </receiver>
-
-        <activity android:name=".NewAppWidgetConfigureActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
-
-        <receiver android:name="FlashlightWidgetReceiver">
-            <intent-filter>
-                <action android:name="COM_FLASHLIGHT"></action>
-            </intent-filter>
-        </receiver>
-
     </application>
 
 </manifest>
